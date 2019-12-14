@@ -234,7 +234,8 @@
 					<false/>
 					<key>explanationText</key>
 					<string>Do you really want to open Slack?
-- Could you queue up the question?
+- Could you queue up that question for later?
+- Really need to read #random right now?
 - Perhaps the extra focus time would be better?</string>
 					<key>negativeTitle</key>
 					<string>No 🌸</string>
@@ -341,8 +342,6 @@
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -402,7 +401,8 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>/Applications/Slack.app/Contents/MacOS/Slack</string>
+					<string>/Applications/Slack.app/Contents/MacOS/Slack &amp;&gt; /dev/null &amp;
+echo $!</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -512,8 +512,6 @@
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -524,24 +522,323 @@
 			<key>isViewVisible</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string># Wait 10 minutes...
+
+MINUTES=10
+sleep $(($MINUTES * 60))</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>0</integer>
+					<key>shell</key>
+					<string>/bin/bash</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>5BD74B5F-7A4B-455E-969A-824301FF4B94</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>DC55CAAF-9271-49E9-8813-8EEFF5C09245</string>
+				<key>UUID</key>
+				<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:812.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}		if application "Slack" is running then		set theDialogText to "Can I close Slack for you?"		display dialog theDialogText buttons {"No thanks", "Yes please!"} default button "Yes please!" cancel button "No thanks!"		quit application "Slack"	end ifend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>0F09C94C-C873-4787-A6FC-7CEC7D188DE1</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>21271C11-541B-4B15-BF61-1832433C3E52</string>
+				<key>UUID</key>
+				<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:1057.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>E35B2B86-BE1E-4881-A4A5-46BAD56608B8</key>
-		<dict>
-			<key>from</key>
-			<string>7BEED9EC-096E-4E8B-9F28-04982E8368F6 - 7BEED9EC-096E-4E8B-9F28-04982E8368F6</string>
-			<key>to</key>
-			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
-		</dict>
-		<key>E993AEED-534E-4F87-9F05-4625436BA344</key>
+		<key>633748AB-08C6-46BE-8F89-77581C1CFCC2</key>
 		<dict>
 			<key>from</key>
 			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
 			<key>to</key>
 			<string>ABD3E23F-22A3-4890-8C35-A4FC73A6FA20 - ABD3E23F-22A3-4890-8C35-A4FC73A6FA20</string>
 		</dict>
+		<key>90FDCE80-9D34-4FF2-A771-CA2B1EB26D8F</key>
+		<dict>
+			<key>from</key>
+			<string>ABD3E23F-22A3-4890-8C35-A4FC73A6FA20 - ABD3E23F-22A3-4890-8C35-A4FC73A6FA20</string>
+			<key>to</key>
+			<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8 - CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
+		</dict>
+		<key>C9C06350-C352-413E-8F62-91230752BF9A</key>
+		<dict>
+			<key>from</key>
+			<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8 - CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
+			<key>to</key>
+			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
+		</dict>
+		<key>E83ED9C7-ABDA-4458-903A-8F43E7967528</key>
+		<dict>
+			<key>from</key>
+			<string>7BEED9EC-096E-4E8B-9F28-04982E8368F6 - 7BEED9EC-096E-4E8B-9F28-04982E8368F6</string>
+			<key>to</key>
+			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
+		</dict>
 	</dict>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>7844B5A5-FC8F-4AA5-B409-E42DD77E9E9F</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>SlackPID</string>
+		</dict>
+	</array>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>workflowTypeIdentifier</key>
