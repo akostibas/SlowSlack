@@ -366,62 +366,46 @@ I will offer to close it in 10 minutes.</string>
 					<key>Optional</key>
 					<true/>
 					<key>Types</key>
-					<array>
-						<string>com.apple.cocoa.string</string>
-					</array>
+					<array/>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>2.0.3</string>
+				<string>1.1.1</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Automator</string>
+					<string>Finder</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
-					<key>COMMAND_STRING</key>
-					<dict/>
-					<key>CheckedForUserDefaultShell</key>
-					<dict/>
-					<key>inputMethod</key>
-					<dict/>
-					<key>shell</key>
-					<dict/>
-					<key>source</key>
-					<dict/>
+					<key>appPath</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<true/>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
 				</dict>
 				<key>AMProvides</key>
 				<dict>
 					<key>Container</key>
 					<string>List</string>
 					<key>Types</key>
-					<array>
-						<string>com.apple.cocoa.string</string>
-					</array>
+					<array/>
 				</dict>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<string>/System/Library/Automator/Launch Application.action</string>
 				<key>ActionName</key>
-				<string>Run Shell Script</string>
+				<string>Launch Application</string>
 				<key>ActionParameters</key>
 				<dict>
-					<key>COMMAND_STRING</key>
-					<string>/Applications/Slack.app/Contents/MacOS/Slack &amp;&gt; /dev/null &amp;
-echo $!</string>
-					<key>CheckedForUserDefaultShell</key>
-					<true/>
-					<key>inputMethod</key>
-					<integer>0</integer>
-					<key>shell</key>
-					<string>/bin/bash</string>
-					<key>source</key>
-					<string></string>
+					<key>appPath</key>
+					<string>/Applications/Slack.app</string>
 				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.RunShellScript</string>
+				<string>com.apple.Automator.OpenApplication</string>
 				<key>CFBundleVersion</key>
-				<string>2.0.3</string>
+				<string>1.1.1</string>
 				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
+				<true/>
 				<key>CanShowWhenRun</key>
 				<true/>
 				<key>Category</key>
@@ -429,99 +413,44 @@ echo $!</string>
 					<string>AMCategoryUtilities</string>
 				</array>
 				<key>Class Name</key>
-				<string>RunShellScriptAction</string>
+				<string>AMLaunchApplicationAction</string>
 				<key>InputUUID</key>
-				<string>81F4D62A-83E5-492C-994B-1087D83AFB31</string>
+				<string>224908B0-E303-4B92-88E1-D82E9F38A9AC</string>
 				<key>Keywords</key>
 				<array>
-					<string>Shell</string>
-					<string>Script</string>
-					<string>Command</string>
-					<string>Run</string>
-					<string>Unix</string>
+					<string>File</string>
+					<string>Open</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>57B7988D-4D64-4B1A-81F5-BA34BB85A9A0</string>
+				<string>47B1E2EC-6517-46BC-B70B-DBF646B41996</string>
 				<key>UUID</key>
-				<string>ABD3E23F-22A3-4890-8C35-A4FC73A6FA20</string>
+				<string>7A5217BD-3950-4C7D-B95A-8D7E69F63DAE</string>
 				<key>UnlocalizedApplications</key>
 				<array>
-					<string>Automator</string>
+					<string>Finder</string>
 				</array>
 				<key>arguments</key>
 				<dict>
 					<key>0</key>
 					<dict>
 						<key>default value</key>
-						<integer>0</integer>
+						<string>/System/Applications/Contacts.app</string>
 						<key>name</key>
-						<string>inputMethod</string>
+						<string>appPath</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
 						<string>0</string>
 						<key>uuid</key>
 						<string>0</string>
-					</dict>
-					<key>1</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>CheckedForUserDefaultShell</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>1</string>
-					</dict>
-					<key>2</key>
-					<dict>
-						<key>default value</key>
-						<string></string>
-						<key>name</key>
-						<string>source</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>2</string>
-					</dict>
-					<key>3</key>
-					<dict>
-						<key>default value</key>
-						<string></string>
-						<key>name</key>
-						<string>COMMAND_STRING</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>3</string>
-					</dict>
-					<key>4</key>
-					<dict>
-						<key>default value</key>
-						<string>/bin/sh</string>
-						<key>name</key>
-						<string>shell</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>4</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:630.000000</string>
+				<string>330.000000:550.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -691,7 +620,7 @@ sleep $(($MINUTES * 60))</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:812.000000</string>
+				<string>330.000000:732.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -739,7 +668,7 @@ sleep $(($MINUTES * 60))</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	if application "Slack" is running then		return "slack running"	else		error "nothing to do, exiting"	end ifend run</string>
+					<string>on run {input, parameters}	if application "Slack" is running then		return "slack running"	else		tell me to quit	end ifend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -775,9 +704,9 @@ sleep $(($MINUTES * 60))</string>
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-	
+
 	(* Your script goes here *)
-	
+
 	return input
 end run</string>
 						<key>name</key>
@@ -793,7 +722,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:1057.000000</string>
+				<string>330.000000:977.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -960,14 +889,114 @@ end run</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:1253.000000</string>
+				<string>330.000000:1173.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Confirmation.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string># Double check that Slack is STILL open...on run {input, parameters}	if application "Slack" is running then		return "slack running"	else		tell me to quit	end ifend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>C6CBA587-8963-41C9-8AB7-48E7F8E2F326</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>C10D0112-5265-4603-9AF0-980E8C56E337</string>
+				<key>UUID</key>
+				<string>D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+
+	(* Your script goes here *)
+
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>330.000000:1418.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -1080,12 +1109,10 @@ end run</string>
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:1356.000000</string>
+				<string>330.000000:1521.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Quit Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1095,47 +1122,54 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>095F72AA-7901-4DC7-8957-9CE5B30B8729</key>
-		<dict>
-			<key>from</key>
-			<string>ABD3E23F-22A3-4890-8C35-A4FC73A6FA20 - ABD3E23F-22A3-4890-8C35-A4FC73A6FA20</string>
-			<key>to</key>
-			<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8 - CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
-		</dict>
-		<key>13806FFD-5368-4674-93A7-1B41B132C0EC</key>
+		<key>3F00B1B0-57CA-48FF-B3F6-5EA4045F5A71</key>
 		<dict>
 			<key>from</key>
 			<string>7BEED9EC-096E-4E8B-9F28-04982E8368F6 - 7BEED9EC-096E-4E8B-9F28-04982E8368F6</string>
 			<key>to</key>
 			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
 		</dict>
-		<key>1D59FC77-B3C7-4956-B613-4F3B89C1C3BE</key>
+		<key>58C5FABA-FAC5-46ED-B4E3-D7E7D42AFDCA</key>
+		<dict>
+			<key>from</key>
+			<string>7A5217BD-3950-4C7D-B95A-8D7E69F63DAE - 7A5217BD-3950-4C7D-B95A-8D7E69F63DAE</string>
+			<key>to</key>
+			<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8 - CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
+		</dict>
+		<key>6ADA3745-607B-4126-BC67-1151F8BB7A51</key>
+		<dict>
+			<key>from</key>
+			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
+			<key>to</key>
+			<string>646DD19B-2824-4D7A-A3EE-817B488C8440 - 646DD19B-2824-4D7A-A3EE-817B488C8440</string>
+		</dict>
+		<key>8D2699F5-D994-466F-93F2-096AD37E4C69</key>
 		<dict>
 			<key>from</key>
 			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
 			<key>to</key>
-			<string>ABD3E23F-22A3-4890-8C35-A4FC73A6FA20 - ABD3E23F-22A3-4890-8C35-A4FC73A6FA20</string>
+			<string>7A5217BD-3950-4C7D-B95A-8D7E69F63DAE - 7A5217BD-3950-4C7D-B95A-8D7E69F63DAE</string>
 		</dict>
-		<key>21E0E935-8D59-4501-A815-7390802B8E1C</key>
+		<key>A1A5D5F9-7075-4B9C-8979-9F9D16C241A4</key>
 		<dict>
 			<key>from</key>
-			<string>646DD19B-2824-4D7A-A3EE-817B488C8440 - 646DD19B-2824-4D7A-A3EE-817B488C8440</string>
+			<string>D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4 - D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4</string>
 			<key>to</key>
 			<string>F842274B-B8C2-4217-B3AB-DA3ED36E93AB - F842274B-B8C2-4217-B3AB-DA3ED36E93AB</string>
 		</dict>
-		<key>2AF840B3-EE9A-4D55-8C27-79A75A894304</key>
+		<key>B459E27E-DCE6-4135-AF4B-C6491B061A34</key>
 		<dict>
 			<key>from</key>
 			<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8 - CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
 			<key>to</key>
 			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
 		</dict>
-		<key>59299A84-0DDA-4C02-80B9-6551239DD6F0</key>
+		<key>FBDBD869-800A-482C-B4AB-EF5A2D26E508</key>
 		<dict>
 			<key>from</key>
-			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
-			<key>to</key>
 			<string>646DD19B-2824-4D7A-A3EE-817B488C8440 - 646DD19B-2824-4D7A-A3EE-817B488C8440</string>
+			<key>to</key>
+			<string>D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4 - D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4</string>
 		</dict>
 	</dict>
 	<key>variables</key>
