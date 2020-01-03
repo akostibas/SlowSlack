@@ -21,25 +21,17 @@
 					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.string</string>
+						<string>com.apple.applescript.object</string>
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>2.0.3</string>
+				<string>1.0</string>
 				<key>AMApplication</key>
 				<array>
 					<string>Automator</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
-					<key>COMMAND_STRING</key>
-					<dict/>
-					<key>CheckedForUserDefaultShell</key>
-					<dict/>
-					<key>inputMethod</key>
-					<dict/>
-					<key>shell</key>
-					<dict/>
 					<key>source</key>
 					<dict/>
 				</dict>
@@ -49,30 +41,25 @@
 					<string>List</string>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.string</string>
+						<string>com.apple.applescript.object</string>
 					</array>
 				</dict>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<string>/System/Library/Automator/Run JavaScript.action</string>
 				<key>ActionName</key>
-				<string>Run Shell Script</string>
+				<string>Run JavaScript</string>
 				<key>ActionParameters</key>
 				<dict>
-					<key>COMMAND_STRING</key>
-					<string>sleep 10</string>
-					<key>CheckedForUserDefaultShell</key>
-					<true/>
-					<key>inputMethod</key>
-					<integer>0</integer>
-					<key>shell</key>
-					<string>/bin/bash</string>
 					<key>source</key>
-					<string></string>
+					<string>function run(input, parameters) {	var app = Application.currentApplication();	app.includeStandardAdditions = true;	
+	// This exploits the dialog timeout to wait for 10 seconds. If we "give up" (i.e., received no input)
+	// we fall to the next Automator block. Otherwise, we quit.
+	// See https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/DisplayDialogsandAlerts.html#//apple_ref/doc/uid/TP40016239-CH15-SW1	r = app.displayDialog("Are you sure you want to open Slack?\n10 second delay initiated...", 		{buttons: ["No"], 		 withIcon: "caution", 		 givingUpAfter: 10});	if (r.gaveUp != true) {		app.quit();	}	return input;}</string>
 				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.RunShellScript</string>
+				<string>com.apple.Automator.RunJavaScript</string>
 				<key>CFBundleVersion</key>
-				<string>2.0.3</string>
+				<string>1.0</string>
 				<key>CanShowSelectedItemsWhenRun</key>
 				<false/>
 				<key>CanShowWhenRun</key>
@@ -82,23 +69,20 @@
 					<string>AMCategoryUtilities</string>
 				</array>
 				<key>Class Name</key>
-				<string>RunShellScriptAction</string>
+				<string>RunJavaScriptAction</string>
 				<key>IgnoresInput</key>
 				<true/>
 				<key>InputUUID</key>
-				<string>9F9B022C-CBDE-433A-8C62-44C61ABFB2FE</string>
+				<string>68048D03-C420-4F37-8946-CD3A314274F6</string>
 				<key>Keywords</key>
 				<array>
-					<string>Shell</string>
-					<string>Script</string>
-					<string>Command</string>
 					<string>Run</string>
-					<string>Unix</string>
+					<string>JavaScript</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>8F14DC87-385E-4BE7-B3C3-878BDD9A1730</string>
+				<string>CA090E0E-1CE7-453B-8DCF-AA11680A1890</string>
 				<key>UUID</key>
-				<string>7BEED9EC-096E-4E8B-9F28-04982E8368F6</string>
+				<string>9DDA0838-E750-4DF1-9566-35EF84CA75BE</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -108,33 +92,12 @@
 					<key>0</key>
 					<dict>
 						<key>default value</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>inputMethod</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-					<key>1</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>CheckedForUserDefaultShell</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>1</string>
-					</dict>
-					<key>2</key>
-					<dict>
-						<key>default value</key>
-						<string></string>
+						<string>function run(input, parameters) {
+	
+	// Your script goes here
+
+	return input;
+}</string>
 						<key>name</key>
 						<string>source</string>
 						<key>required</key>
@@ -142,41 +105,15 @@
 						<key>type</key>
 						<string>0</string>
 						<key>uuid</key>
-						<string>2</string>
-					</dict>
-					<key>3</key>
-					<dict>
-						<key>default value</key>
-						<string></string>
-						<key>name</key>
-						<string>COMMAND_STRING</string>
-						<key>required</key>
 						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>3</string>
-					</dict>
-					<key>4</key>
-					<dict>
-						<key>default value</key>
-						<string>/bin/sh</string>
-						<key>name</key>
-						<string>shell</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>4</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:252.000000</string>
+				<string>864.000000:527.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -349,7 +286,7 @@ I will offer to close it in 10 minutes.</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:448.000000</string>
+				<string>864.000000:723.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Confirmation.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -448,7 +385,7 @@ I will offer to close it in 10 minutes.</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:550.000000</string>
+				<string>864.000000:825.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -631,7 +568,7 @@ done</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:732.000000</string>
+				<string>864.000000:1007.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -715,9 +652,9 @@ done</string>
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-
+	
 	(* Your script goes here *)
-
+	
 	return input
 end run</string>
 						<key>name</key>
@@ -733,7 +670,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:977.000000</string>
+				<string>864.000000:1252.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -903,7 +840,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:1173.000000</string>
+				<string>864.000000:1448.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Confirmation.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -987,9 +924,9 @@ end run</string>
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-
+	
 	(* Your script goes here *)
-
+	
 	return input
 end run</string>
 						<key>name</key>
@@ -1005,7 +942,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:1418.000000</string>
+				<string>864.000000:1693.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1123,7 +1060,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>330.000000:1521.000000</string>
+				<string>864.000000:1796.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Quit Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1133,54 +1070,54 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0BD8C78A-90A8-49A4-95EB-4FA21171AD19</key>
+		<key>1436B4D5-2FBD-4E60-817F-DC5D6F941098</key>
+		<dict>
+			<key>from</key>
+			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
+			<key>to</key>
+			<string>646DD19B-2824-4D7A-A3EE-817B488C8440 - 646DD19B-2824-4D7A-A3EE-817B488C8440</string>
+		</dict>
+		<key>18C8DDBF-D98E-413B-9BC5-8747D432A347</key>
 		<dict>
 			<key>from</key>
 			<string>646DD19B-2824-4D7A-A3EE-817B488C8440 - 646DD19B-2824-4D7A-A3EE-817B488C8440</string>
 			<key>to</key>
 			<string>D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4 - D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4</string>
 		</dict>
-		<key>242C8087-3CDF-4909-AC47-13955FA1E1E1</key>
+		<key>20DACF76-5E0F-433A-A84B-85E03103ED90</key>
 		<dict>
 			<key>from</key>
-			<string>7A5217BD-3950-4C7D-B95A-8D7E69F63DAE - 7A5217BD-3950-4C7D-B95A-8D7E69F63DAE</string>
-			<key>to</key>
 			<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8 - CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
+			<key>to</key>
+			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
 		</dict>
-		<key>54852ACC-12B8-4C9A-BAC3-DD9D821EA707</key>
+		<key>5BF421BB-6904-4736-842C-45B0FF0A1E9D</key>
+		<dict>
+			<key>from</key>
+			<string>9DDA0838-E750-4DF1-9566-35EF84CA75BE - 9DDA0838-E750-4DF1-9566-35EF84CA75BE</string>
+			<key>to</key>
+			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
+		</dict>
+		<key>73EB9F58-96D9-4AA7-8952-31538E73FC38</key>
 		<dict>
 			<key>from</key>
 			<string>D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4 - D6EB22DF-EFEA-46B0-BA62-25E4715D1BA4</string>
 			<key>to</key>
 			<string>F842274B-B8C2-4217-B3AB-DA3ED36E93AB - F842274B-B8C2-4217-B3AB-DA3ED36E93AB</string>
 		</dict>
-		<key>B6085C24-323D-4805-B546-7E607F1BA7AC</key>
-		<dict>
-			<key>from</key>
-			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
-			<key>to</key>
-			<string>646DD19B-2824-4D7A-A3EE-817B488C8440 - 646DD19B-2824-4D7A-A3EE-817B488C8440</string>
-		</dict>
-		<key>BD76443E-D190-41A3-AAF3-FC8BA7384ACF</key>
+		<key>B088B5C3-8C50-4A76-8098-A5228D219427</key>
 		<dict>
 			<key>from</key>
 			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
 			<key>to</key>
 			<string>7A5217BD-3950-4C7D-B95A-8D7E69F63DAE - 7A5217BD-3950-4C7D-B95A-8D7E69F63DAE</string>
 		</dict>
-		<key>DD9215C5-02A8-4ECF-8512-1B920A98ADF9</key>
+		<key>D75EED89-6E4B-457D-838B-4584B4F3D6B9</key>
 		<dict>
 			<key>from</key>
+			<string>7A5217BD-3950-4C7D-B95A-8D7E69F63DAE - 7A5217BD-3950-4C7D-B95A-8D7E69F63DAE</string>
+			<key>to</key>
 			<string>CA1C1397-7653-49C3-9705-8DAAB508C5F8 - CA1C1397-7653-49C3-9705-8DAAB508C5F8</string>
-			<key>to</key>
-			<string>D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166 - D7B6F53E-6AAF-4CC9-BFD0-21CE8D14C166</string>
-		</dict>
-		<key>F8CC2B82-B635-4C4F-B1FA-E38E4F15A7BD</key>
-		<dict>
-			<key>from</key>
-			<string>7BEED9EC-096E-4E8B-9F28-04982E8368F6 - 7BEED9EC-096E-4E8B-9F28-04982E8368F6</string>
-			<key>to</key>
-			<string>BA75C427-5FA8-45F1-84A0-16011EBBCFF1 - BA75C427-5FA8-45F1-84A0-16011EBBCFF1</string>
 		</dict>
 	</dict>
 	<key>variables</key>
